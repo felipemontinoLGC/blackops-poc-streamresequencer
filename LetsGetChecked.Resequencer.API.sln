@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LetsGetChecked.Resequencer.API", "LetsGetChecked.Resequencer.API\LetsGetChecked.Resequencer.API.csproj", "{263FF128-3BAD-4074-BA1F-6B52734DB82B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{263FF128-3BAD-4074-BA1F-6B52734DB82B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{263FF128-3BAD-4074-BA1F-6B52734DB82B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{263FF128-3BAD-4074-BA1F-6B52734DB82B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{263FF128-3BAD-4074-BA1F-6B52734DB82B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C96D7F6-A7D8-4A69-8174-FCD91929E8FF}
+	EndGlobalSection
+EndGlobal
