@@ -1,4 +1,4 @@
-name: GitVersion
+name: GitVersionFlow
 
 on:
   push:
