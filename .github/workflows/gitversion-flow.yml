@@ -18,12 +18,12 @@ jobs:
 
       - name: GitVersion Setup
         uses: gittools/actions/gitversion/setup@v2.0.1
-        inputs:
+        with:
           versionSpec: '6.x'
 
       - name: GitVersion Determine Version
         uses: gittools/actions/gitversion/execute@v2.0.1
-        with:
+        inputs:
           updateAssemblyInfo: true
 
       - name: Restore dependencies
