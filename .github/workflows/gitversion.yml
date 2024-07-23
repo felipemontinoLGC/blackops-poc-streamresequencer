@@ -16,13 +16,9 @@ jobs:
           ref: ${{ github.head_ref }}   # checkout the correct branch name
           fetch-depth: 0                # fetch the whole repo history
 
-      - name: Git Version
-        uses: codacy/git-version@2.5.4
       - name: GitVersion Setup
         uses: gittools/actions/gitversion/setup@v2.0.1
         with:
-          prefix: module2-
-          log-path: module2/
           versionSpec: '6.x'
 
       - name: GitVersion Determine Version
