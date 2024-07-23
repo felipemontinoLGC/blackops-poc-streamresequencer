@@ -23,7 +23,7 @@ jobs:
 
       - name: GitVersion Determine Version
         uses: gittools/actions/gitversion/execute@v2.0.1
-        inputs:
+        with:
           updateAssemblyInfo: true
 
       - name: Restore dependencies
