@@ -37,3 +37,11 @@ jobs:
       
       - name: Package nuget
         run: dotnet pack LetsGetChecked.Resequencer.API.sln --configuration release -o:package /p:PackageVersion=${{ steps.gitversion.outputs.AssemblySemVer }}
+
+      - name: Install GitReleaseManager
+        uses: gittools/actions/gitreleasemanager/setup@v2.0.1
+        with:
+          versionSpec: '0.18.x'
+          preferLatestVersion: true
+
+          
