@@ -18,7 +18,7 @@ jobs:
 
       - name: GitVersion Setup
         uses: gittools/actions/gitversion/setup@v2.0.1
-        with:
+        inputs:
           versionSpec: '6.x'
 
       - name: GitVersion Determine Version
