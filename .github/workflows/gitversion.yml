@@ -24,7 +24,6 @@ jobs:
       - name: GitVersion Determine Version
         uses: gittools/actions/gitversion/execute@v2.0.1
         with:
-          updateAssemblyInfo: true
           useConfigFile: true
           configFilePath: ./.github/gitversion.yml
 
