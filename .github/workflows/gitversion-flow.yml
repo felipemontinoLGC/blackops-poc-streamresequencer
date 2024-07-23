@@ -1,0 +1,40 @@
+name: GitVersionFlow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  Versionning:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}   # checkout the correct branch name
+          fetch-depth: 0                # fetch the whole repo history
+
+      - name: GitVersion Setup
+        uses: gittools/actions/gitversion/setup@v2.0.1
+        with:
+          versionSpec: '6.x'
+
+      - name: GitVersion Determine Version
+        uses: gittools/actions/gitversion/execute@v2.0.1
+        with:
+          useConfigFile: true
+          configFilePath: ./.github/gitversion.yml
+
+      - name: Restore dependencies
+        run: dotnet restore
+      
+      - name: Build dotnet 
+        run: dotnet build LetsGetChecked.Resequencer.API.sln --configuration release /p:Version=${{ steps.gitversion.outputs.AssemblySemVer }} /p:AssemblyVersion=${{ steps.gitversion.outputs.AssemblySemVer }} /p:InformationalVersion=${{ steps.gitversion.outputs.InformationalVersion }} --no-restore
+      
+      - name: Run Tests
+        run: dotnet test --configuration Release /p:Version=${{ steps.gitversion.outputs.AssemblySemVer }} --no-build --verbosity normal
+      
+      - name: Package nuget
+        run: dotnet pack LetsGetChecked.Resequencer.API.sln --configuration release -o:package /p:PackageVersion=${{ steps.gitversion.outputs.AssemblySemVer }}
